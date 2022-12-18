@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+  <body>
+    <div id="show"></div>
+  </body>
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const Child1 = () => <span>Child1</span>;
+    const Child2 = () => <span>Child2</span>;
+    const Box = () => (
+      <div
+        onClick={(event) => {
+          alert("Clicked!");
+        }}
+        style={{ backgroundColor: "skyblue" }}
+      >
+        <Child1 />
+        <Child2 />
+      </div>
+    );
+    const show = document.getElementById("show");
+    ReactDOM.render(<Box />, show);
+  </script>
+</html>
