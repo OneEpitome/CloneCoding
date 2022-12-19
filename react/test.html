@@ -14,7 +14,7 @@
   ></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    const Child1 = () => <span>Child1</span>;
+    /* const Child1 = () => <span>Child1</span>;
     const Child2 = () => <span>Child2</span>;
     const Box = () => (
       <div
@@ -26,8 +26,21 @@
         <Child1 />
         <Child2 />
       </div>
-    );
+    ); */
+    const Container = () => {
+      let [n, reRendering] = React.useState(1);
+      let a = React.useState();
+      const onClickHandler = () => {
+        reRendering(n + 1);
+      };
+      console.log("hi");
+      return (
+        <div>
+          <h3 onClick={onClickHandler}>{n}</h3>
+        </div>
+      );
+    };
     const show = document.getElementById("show");
-    ReactDOM.render(<Box />, show);
+    ReactDOM.render(<Container />, show);
   </script>
 </html>
